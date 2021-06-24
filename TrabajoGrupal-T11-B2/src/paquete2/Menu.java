@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 
-package paquete1;
+package paquete2;
 
 /**
  * 
  * @author josef
  */
-public class MenuEconomico {
+public class Menu {
 
 }
