@@ -14,32 +14,35 @@ public  abstract class Menu {
   
     protected String nombrePlato;
     protected double valorMenu;
+    protected double valorInivialMenu;
     
     public Menu (String nombre, double cuotaB){
-        establecerNombreArrendatario(nombre);
-        cuotaBase = cuotaB;
+        establecerNombreDelPlato(nombre);
+        
     }
-    //************************
-    public void establecerNombreArrendatario(String nombre){
-        nombreArrendatario = nombre;
+     
+    public void establecerNombreDelPlato(String nombre){
+        nombrePlato = nombre;
     }
-    
-    public void establecerCuotaBase(double x){
-        cuotaBase = x;
-    }
-    
-    public abstract void establecerArriendoMensual();
-    
-    public String obtenerNombreArrendatario(){
-        return nombreArrendatario;
+    public void establecerValorDelMenu(double v){
+        valorMenu = v;
     }
     
-    public double obtenerCuotaBase(){
-        return cuotaBase;
+    public void establecerValorInicialMenu(double i){
+        valorInivialMenu = i;
+    }  
+    
+    public abstract void establecerValorMenu();
+    
+    public String obtenerNombreDelPlato(){
+        return nombrePlato;
     }
     
-    public double obtenerArriendoMensual(){
-        return arriendoMensual;
+    public double obtenerValorDelMenu(){
+        return valorMenu;
+    }
+    public double obtenerInicialMenu(){
+        return valorInivialMenu;
     }
        
 }
