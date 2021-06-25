@@ -12,20 +12,21 @@ import paquete2.Menu;
  * 
  * @author josef
  */
-public class MenuNiño extends Menu {
-
+public class MenuNino extends Menu {
 
     private double valorHelado;
     private double valorPastel;
 
-    public MenuNiño(String n, double vH, double vP, double v) {
+    public MenuNino(String n, double v, double vH, double vP) {
         super(n, v);
         valorHelado = vH;
         valorPastel = vP;
+        establecerValorMenu();
     }
 
+    @Override
     public void establecerValorMenu() {
-        valorMenu = valorInivialMenu + valorHelado + valorPastel;
+        valorMenu = valorInicialMenu + valorHelado + valorPastel;
     }
 
     public void establecerValorHelado(double vH) {
@@ -46,5 +47,17 @@ public class MenuNiño extends Menu {
 
     @Override
     public String toString() {
+        String cadena = String.format("MENÚ DE NIÑO:\n"
+                + ">> Nombre del plato: %s\n"
+                + ">> Porción Helado: $%.2f\n"
+                + ">> Porción pastel: $%.2f\n"
+                + ">> Valor inicial del menú: $%.2f\n"
+                + ">> Valor del menú: $%.2f\n",
+                obtenerNombreDelPlato(),
+                obtenerValorHelado(),
+                obtenerValorPastel(),
+                obtenerInicialMenu(),
+                obtenerValorDelMenu());
+        return cadena;
     }
 }

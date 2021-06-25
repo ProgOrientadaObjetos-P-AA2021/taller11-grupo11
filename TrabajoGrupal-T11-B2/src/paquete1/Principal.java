@@ -6,10 +6,7 @@
 package paquete1;
 import java.util.ArrayList;
 import paquete2.Menu;
-import paquete3.MenuCarta;
-import paquete3.MenuDia;
-import paquete3.MenuEconomico;
-import paquete3.MenuNiño;
+import paquete3.*;
 import paquete4.Cuenta;
 /**
  *
@@ -18,29 +15,28 @@ import paquete4.Cuenta;
 public class Principal {
 
     public static void main(String[] args) {
-           ArrayList<Menu> listaMenu = new ArrayList<>();
+        ArrayList<Menu> listaMenu = new ArrayList<>();
+        
+        MenuNino menuniños1 = new MenuNino(">>> Cajita Feliz De McDonald's",
+                2, 2.5, 3);
+        MenuNino menuniños2 = new MenuNino(">>> KFC Kids", 3, 2, 2.5);
 
-        MenuCarta menucarta = new MenuCarta(">>> Camarones apanados"
-                                                , 1.0, 1.5, 2.50);
-        menucarta.establecerPorcentajeAdicional();
+        MenuEconomico menueconomico = new MenuEconomico(">>> Sopas", 1.5);
 
-        MenuNiño menuniños1 = new MenuNiño(">>> Cajita Feliz De McDonald's"
-                                                        , 2.00, 2.50, 3.00);
+        MenuDia menudia = new MenuDia(">>> Guatita", 1.5, 2.5, 2);
+        
+        MenuCarta menucarta = new MenuCarta(">>> Camarones apanados",
+                1, 2.5, 1);
 
-        MenuEconomico menueconomico = new MenuEconomico(">>> Sopas", 1.50);
-        menueconomico.establecerPorcentajeDescuento();
-
-        MenuDia menudia = new MenuDia("Guatita", 1.50, 2.50, 2.00);
-
-        listaMenu.add(menucarta);
         listaMenu.add(menuniños1);
+        listaMenu.add(menuniños2);
         listaMenu.add(menueconomico);
         listaMenu.add(menudia);
-
-        for (int i = 0; i < listaMenu.size(); i++) {
-            listaMenu.get(i).obtenerValorDelMenu();
-        }
-
+        listaMenu.add(menucarta);
+        
+        Cuenta cuentaTotal = new Cuenta("Carlos Rodrigues", 2, listaMenu);
+        
+        System.out.println(cuentaTotal);
     }
 
 }

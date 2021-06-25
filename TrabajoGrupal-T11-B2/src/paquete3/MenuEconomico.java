@@ -17,14 +17,17 @@ public class MenuEconomico extends Menu {
 
     public MenuEconomico(String n, double v) {
         super(n, v);
+        establecerPorcentajeDescuento();
+        establecerValorMenu();
     }
 
     public void establecerPorcentajeDescuento() {
-        porcentajeDescuento = valorInivialMenu * 0.50;
+        porcentajeDescuento = valorInicialMenu * 0.50;
     }
 
+    @Override
     public void establecerValorMenu() {
-        valorMenu = valorInivialMenu - porcentajeDescuento;
+        valorMenu = valorInicialMenu - porcentajeDescuento;
     }
 
     public double obtenerPorcentajeDescuento() {
@@ -33,7 +36,10 @@ public class MenuEconomico extends Menu {
 
     @Override
     public String toString() {
-
+        String cadena = String.format("*MENÚ ECONÓMICO:\n%s"
+                + " - Descuento: $%.2f\n", super.toString(),
+                obtenerPorcentajeDescuento());
+        return cadena;
     }
 
 }

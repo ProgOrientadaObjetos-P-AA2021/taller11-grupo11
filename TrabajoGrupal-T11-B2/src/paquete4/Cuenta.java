@@ -25,7 +25,9 @@ public class Cuenta {
         nombreCliente = n;
         ivaPor = i;
         lista = l;
-//        establecerIvaVal(i);
+        establecerSubtotal();
+        establecerIvaVal();
+        establecerTotal();
     }
 
     public void establecerNombreCliente(String n) {
@@ -36,7 +38,7 @@ public class Cuenta {
         ivaPor = i;
     }
 
-    public void establecerIvaVal(double i) {
+    public void establecerIvaVal() {
         ivaVal = (subtotal * ivaPor) / 100;
     }
 
@@ -78,6 +80,25 @@ public class Cuenta {
 
     public double obtenerTotal() {
         return total;
+    }
+    
+    @Override
+    public String toString(){
+        String cadena = String.format("Nombre del Cliente: %s\n"
+                + "Listado de menús:\n",
+                obtenerNombreCliente());
+        for(int i = 0; i < lista.size(); i++){
+            cadena = String.format("%s**Menú %d**\n%s\n",
+                    cadena, i + 1, lista.get(i));
+        }
+        cadena = String.format("%s - Subtotal: $%.2f\n"
+                + " - IVA %.2f%% = $%.2f\n"
+                + " - Total: $%.2f\n",
+                cadena,
+                obtenerSubtotal(),
+                obtenerIvaPor(), obtenerIvaVal(),
+                obtenerTotal());
+        return cadena;
     }
 
 }

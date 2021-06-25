@@ -12,10 +12,12 @@ public class MenuCarta extends Menu {
     private double valorBebida;
     private double porcentajeAdicional;
 
-    public MenuCarta(String np, double v, double vb, double cI) {
+    public MenuCarta(String np,  double cI, double vP, double vb) {
         super(np, cI);
-        valorPorcionGuarnicion = v;
+        valorPorcionGuarnicion = vP;
         valorBebida = vb;
+        establecerPorcentajeAdicional();
+        establecerValorMenu();
     }
 
     public void establecerValorPorcionGuarnicion(double n) {
@@ -27,13 +29,13 @@ public class MenuCarta extends Menu {
     }
 
     public void establecerPorcentajeAdicional() {
-        porcentajeAdicional = valorInivialMenu * 0.10;
+        porcentajeAdicional = valorInicialMenu * 0.10;
     }
 
     @Override
     public void establecerValorMenu() {
         valorMenu = valorBebida + valorPorcionGuarnicion
-                + valorInivialMenu + porcentajeAdicional;
+                + valorInicialMenu + porcentajeAdicional;
     }
 
     public double obtenerValorPorcionGuarnicion() {
@@ -50,17 +52,17 @@ public class MenuCarta extends Menu {
 
     @Override
     public String toString() {
-        String cadena = String.format(">>>>>> Menú <<<<<< \n"
+        String cadena = String.format("MENÚ A LA CARTA:\n"
                 + ">> Nombre del plato: %s\n"
-                + ">> Valor inicial del menu: %.2f\n"
-                + ">> Valor porcion de guarnicion: %.2f\n"
-                + ">> Valor de bebida: %.2f\n"
-                + ">> Porcentaje de servicio: %.2f\n"
-                + ">> Valor del menu: %.2f\n",
+                + ">> Valor porcion de guarnicion: $%.2f\n"
+                + ">> Valor de bebida: $%.2f\n"
+                + ">> Valor inicial del menú: $%.2f"
+                + ">> Porcentaje de servicio: $%.2f\n"
+                + ">> Valor del menu: $%.2f\n",
                 obtenerNombreDelPlato(),
-                obtenerInicialMenu(),
                 obtenerValorPorcionGuarnicion(),
                 obtenerValorBebida(),
+                obtenerInicialMenu(),
                 obtenerPorcentajeAdicional(),
                 obtenerValorDelMenu());
         return cadena;
