@@ -16,18 +16,18 @@ public class MenuDia extends Menu {
     private double valPostre;
     private double valBebida;
 
-    public MenuDia(String n, double vP, double vB, double v) {
+    public MenuDia(String n,double v, double vP, double vB) {
         super(n, v);
         valPostre = vP;
         valBebida = vB;
         establecerValorMenu();
     }
 
-    public void establecerValorPostre(double vP) {
+    public void establecerValPostre(double vP) {
         valPostre = vP;
     }
 
-    public void establecerValorDeBebida(double vB) {
+    public void establecerValDeBebida(double vB) {
         valBebida = vB;
     }
 
@@ -36,11 +36,11 @@ public class MenuDia extends Menu {
         valorMenu = valorInicialMenu + valBebida + valPostre;
     }
 
-    public double obtenerValorDelPostre() {
+    public double obtenerValPostre() {
         return valPostre;
     }
 
-    public double obtenerValorDeBebida() {
+    public double obtenerValBebida() {
         return valBebida;
     }
 
@@ -52,11 +52,11 @@ public class MenuDia extends Menu {
                 + ">> Bebida: $%.2f\n"
                 + ">> Valor inicial del menú: $%.2f\n"
                 + ">> valor del menú: $%.2f\n",
-                obtenerNombreDelPlato(),
-                obtenerValorDelPostre(),
-                obtenerValorDeBebida(),
-                obtenerInicialMenu(),
-                obtenerValorDelMenu());
+                obtenerNombrePlato(),
+                obtenerValPostre(),
+                obtenerValBebida(),
+                obtenerValorInicialMenu(),
+                obtenerValorMenu());
         return cadena;
     }
 

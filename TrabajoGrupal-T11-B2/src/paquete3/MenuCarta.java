@@ -12,10 +12,10 @@ public class MenuCarta extends Menu {
     private double valorBebida;
     private double porcentajeAdicional;
 
-    public MenuCarta(String np,  double cI, double vP, double vb) {
+    public MenuCarta(String np,  double cI, double vP, double vB) {
         super(np, cI);
         valorPorcionGuarnicion = vP;
-        valorBebida = vb;
+        valorBebida = vB;
         establecerPorcentajeAdicional();
         establecerValorMenu();
     }
@@ -59,12 +59,12 @@ public class MenuCarta extends Menu {
                 + ">> Valor inicial del menú: $%.2f"
                 + ">> Porcentaje de servicio: $%.2f\n"
                 + ">> Valor del menu: $%.2f\n",
-                obtenerNombreDelPlato(),
+                obtenerNombrePlato(),
                 obtenerValorPorcionGuarnicion(),
                 obtenerValorBebida(),
-                obtenerInicialMenu(),
+                obtenerValorInicialMenu(),
                 obtenerPorcentajeAdicional(),
-                obtenerValorDelMenu());
+                obtenerValorMenu());
         return cadena;
     }
 

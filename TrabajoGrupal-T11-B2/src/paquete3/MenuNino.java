@@ -53,11 +53,11 @@ public class MenuNino extends Menu {
                 + ">> Porción pastel: $%.2f\n"
                 + ">> Valor inicial del menú: $%.2f\n"
                 + ">> Valor del menú: $%.2f\n",
-                obtenerNombreDelPlato(),
+                obtenerNombrePlato(),
                 obtenerValorHelado(),
                 obtenerValorPastel(),
-                obtenerInicialMenu(),
-                obtenerValorDelMenu());
+                obtenerValorInicialMenu(),
+                obtenerValorMenu());
         return cadena;
     }
 }

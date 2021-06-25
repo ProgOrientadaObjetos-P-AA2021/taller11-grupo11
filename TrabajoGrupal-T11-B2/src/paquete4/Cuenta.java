@@ -49,7 +49,7 @@ public class Cuenta {
     public void establecerSubtotal() {
         double suma = 0;
         for (int i = 0; i < lista.size(); i++) {
-            suma = suma + lista.get(i).obtenerValorDelMenu();
+            suma = suma + lista.get(i).obtenerValorMenu();
         }
         subtotal = suma;
     }

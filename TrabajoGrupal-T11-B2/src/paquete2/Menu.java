@@ -15,7 +15,7 @@ public abstract class Menu {
         valorInicialMenu = valorI;
     }
 
-    public void establecerNombreDelPlato(String nombre) {
+    public void establecerNombrePlato(String nombre) {
         nombrePlato = nombre;
     }
 
@@ -25,15 +25,15 @@ public abstract class Menu {
         valorInicialMenu = i;
     }
 
-    public String obtenerNombreDelPlato() {
+    public String obtenerNombrePlato() {
         return nombrePlato;
     }
 
-    public double obtenerValorDelMenu() {
+    public double obtenerValorMenu() {
         return valorMenu;
     }
 
-    public double obtenerInicialMenu() {
+    public double obtenerValorInicialMenu() {
         return valorInicialMenu;
     }
 
@@ -41,8 +41,8 @@ public abstract class Menu {
     public String toString() {
         String cadena = String.format(">> Nombre del plato: %s\n"
                 + ">> Valor inicial del menú: %.2f\n"
-                + ">> Valor del menú: %.2f\n", obtenerNombreDelPlato(),
-                obtenerInicialMenu(), obtenerValorDelMenu());
+                + ">> Valor del menú: %.2f\n", obtenerNombrePlato(),
+                obtenerValorInicialMenu(), obtenerValorMenu());
         return cadena;
     }
 
