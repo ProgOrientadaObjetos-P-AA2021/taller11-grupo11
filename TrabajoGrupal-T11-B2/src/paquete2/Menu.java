@@ -13,7 +13,7 @@ public  abstract class Menu {
         establecerNombreDelPlato(nombre);
         
     }
-     //**
+     //**44
     public void establecerNombreDelPlato(String nombre){
         nombrePlato = nombre;
     }

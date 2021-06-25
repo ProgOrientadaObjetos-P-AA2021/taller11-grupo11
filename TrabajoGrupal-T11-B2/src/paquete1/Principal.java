@@ -27,7 +27,7 @@ public class Principal {
         MenuNiño menuniños1 = new MenuNiño(">>> Cajita Feliz De McDonald's"
                                                         , 2.00, 2.50, 3.00);
 
-        MenuEconomico menueconomico = new MenuEconomico("Sopas", 2.25);
+        MenuEconomico menueconomico = new MenuEconomico(">>> Sopas", 1.50);
         menueconomico.establecerPorcentajeDescuento();
 
         MenuDia menudia = new MenuDia("Guatita", 1.50, 2.50, 2.00);
